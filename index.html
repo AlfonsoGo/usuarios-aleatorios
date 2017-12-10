@@ -17,6 +17,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <button class="btn btn-primary btn-lg btn-block" id="boton">Hazlo!</button>
+        <div id="almacenar" class="container"></div>
     </div>
 </div>
 
@@ -42,9 +43,14 @@
         $("#boton").on("click", function () {
             $(this).css({
                 "display": "none"
-            })
-            
+            });
+            console.log(datos.responseJSON)
         });
+        $(datos.responseJSON.results).each(function (i,item) {
+          $("#almacenar").append()
+
+
+        })
 
     })
 </script>
