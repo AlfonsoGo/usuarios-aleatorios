@@ -34,16 +34,18 @@
 
 <script>
     $(function () {
-        $("#boton").click(function () {
-            var data=$.ajax({
-                url: 'https://randomuser.me/api/?results=50',
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data);
-                }
+      var datos = $.ajax({
+            url: 'https://randomuser.me/api/?results=50',
+            dataType: 'json'
+        });
 
-            });
-        })
+        $("#boton").on("click", function () {
+            $(this).css({
+                "display": "none"
+            })
+            
+        });
+
     })
 </script>
 </body>
