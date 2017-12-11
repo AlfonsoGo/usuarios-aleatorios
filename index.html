@@ -12,6 +12,7 @@
 </head>
 <body>
 <div class="jumbotron">
+
     <h1 class="display-3 text-center">Lista aleatoria de Usuarios</h1>
 </div>
 <div class="container">
@@ -47,9 +48,25 @@
                 $(this).css({
                     "display": "none"
                 });
-                 console.log(data.results[0].name.first);
-                 console.log(data.results[0].name.last);
-                 console.log(data.results[0].email);
+                var nombre;
+                var apellido;
+                var email;
+                var calle;
+                var codigo;
+                var ciudad;
+                var estado;
+                var imagen;
+                //las variables se declara fuera del bucle sino fallan
+                for(i=0;i<=49;i++){
+                    nombre=console.log((data.results[i].name.first));
+                    apellido=(data.results[i].name.last);
+                    email=(data.results[i].email);
+                    calle=(data.results[i].location.street);
+                    codigo=(data.results[i].location.postcode);
+                    ciudad=(data.results[i].location.city);
+                    estado=(data.results[i].location.state);
+                    imagen=(data.results[i].picture.large);
+                }
 
             })
         })
