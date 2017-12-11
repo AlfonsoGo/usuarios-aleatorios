@@ -35,23 +35,24 @@
 
 <script>
     $(function () {
-      var datos = $.ajax({
-            url: 'https://randomuser.me/api/?results=50',
-            dataType: 'json'
+        var datos = $.ajax({
+            url: 'https://randomuser.me/api/',
+            dataType: 'json',
+            data: {results: "50"},
+            method: "GET" //el metodo tiene que ser get porque pasa valores por la url la api
         });
+        datos.done(function (data) {
 
-        $("#boton").on("click", function () {
-            $(this).css({
-                "display": "none"
-            });
-            console.log(datos.responseJSON)
-        });
-        $(datos.responseJSON.results).each(function (i,item) {
-          $("#almacenar").append()
+            $("#boton").on("click", function () {
+                $(this).css({
+                    "display": "none"
+                });
+                 console.log(data.results[0].name.first);
+                 console.log(data.results[0].name.last);
+                 console.log(data.results[0].email);
 
-
+            })
         })
-
     })
 </script>
 </body>
