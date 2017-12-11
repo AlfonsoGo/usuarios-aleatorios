@@ -1,0 +1,11 @@
+#almacenar div{
+    padding-left: 130px ;
+    background-repeat: no-repeat;
+}
+p:last-of-type{
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+div:nth-last-child(2n){
+    background-color: #e9ebee;
+}

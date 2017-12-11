@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="css/estilos.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -57,15 +57,21 @@
                 var estado;
                 var imagen;
                 //las variables se declara fuera del bucle sino fallan
-                for(i=0;i<=49;i++){
-                    nombre=console.log((data.results[i].name.first));
-                    apellido=(data.results[i].name.last);
-                    email=(data.results[i].email);
-                    calle=(data.results[i].location.street);
-                    codigo=(data.results[i].location.postcode);
-                    ciudad=(data.results[i].location.city);
-                    estado=(data.results[i].location.state);
-                    imagen=(data.results[i].picture.large);
+                for (i = 0; i <= 49; i++) {
+                    nombre = ((data.results[i].name.first));
+                    apellido = (data.results[i].name.last);
+                    email = (data.results[i].email);
+                    calle = (data.results[i].location.street);
+                    codigo = (data.results[i].location.postcode);
+                    ciudad = (data.results[i].location.city);
+                    estado = (data.results[i].location.state);
+                    imagen = (data.results[i].picture.large);
+
+                    $("#almacenar").append("<div style='background-image:url("+imagen+")'>" +
+                        "<p>" + nombre + apellido + "</p>" +
+                        "<p>" + email + "</p>" +
+                        "<p>" + calle + codigo + ciudad + estado + "</p>" +
+                        "</div>")
                 }
 
             })
